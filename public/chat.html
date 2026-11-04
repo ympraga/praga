@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - Franco</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Inicio Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <!-- Fim Google Fonts -->
+</head>
+
+<body>
+
+    <nav class="menu">
+        <a href="index.html" class="link-menu">Home</a>
+        <a href="galeria.html" class="link-menu">Galeria</a>
+        <a href="chat.html" class="link-menu" id="linkChat">Chat</a>
+        <a href="cadastro.html" class="link-menu">Cadastro</a>
+        <a href="login.html" class="link-menu">Login</a>
+    </nav>
+
+    <div class="container-chat">
+
+        <h2 id="boasVindas">Seja bem-vindo ao Chat</h2>
+
+        <div id="caixaChat" class="janela-mensagens">
+            <p class="mensagem">
+                Franco: Ei! Vai ficar ai me olhando ou vai digitar algo?
+            </p>
+        </div>
+
+        <div id="inputArea" class="formulario-envio">
+            <input
+                type="text"
+                id="mensagem"
+                placeholder="Digite sua mensagem..."
+                autocomplete="off"
+            >
+
+            <button id="btnEnviar" type="button">Enviar</button>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; Desenvolvido por Arthur S. - 2026 Curitiba
+    </footer>
+
+    <script>
+        const linkChat = document.querySelector('#linkChat');
+
+        linkChat.addEventListener('click', function(event) {
+            const usuarioLogado = localStorage.getItem('usuarioLogado');
+
+            if (!usuarioLogado) {
+                event.preventDefault();
+                window.location.href = 'cadastro.html';
+            }
+        });
+
+        const usuarioLogado = localStorage.getItem('usuarioLogado');
+
+        if (!usuarioLogado) {
+            window.location.href = 'cadastro.html';
+        } else {
+            document.querySelector('#boasVindas').textContent =
+                `Olá ${usuarioLogado}, seja bem-vindo!`;
+        }
+
+        const caixaChat = document.querySelector('#caixaChat');
+        const inputMensagem = document.querySelector('#mensagem');
+        const btnEnviar = document.querySelector('#btnEnviar');
+
+        const historicoConversa = [];
+
+        function mensagemTela(autor, texto) {
+            const textoFinal = document.createElement('p');
+
+            textoFinal.className = 'mensagem';
+            textoFinal.textContent = `${autor}: ${texto}`;
+
+            caixaChat.appendChild(textoFinal);
+
+            caixaChat.scrollTop = caixaChat.scrollHeight;
+        }
+
+        async function enviarMensagem() {
+            const textoMensagem = inputMensagem.value.trim();
+
+            if (!textoMensagem || btnEnviar.disabled) {
+                return;
+            }
+
+            mensagemTela(usuarioLogado, textoMensagem);
+
+            historicoConversa.push({
+                role: 'user',
+                content: textoMensagem
+            });
+
+            inputMensagem.value = '';
+            btnEnviar.disabled = true;
+
+            try {
+                const respostaServidor = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        historico: historicoConversa
+                    })
+                });
+
+                const dados = await respostaServidor.json();
+
+                if (!respostaServidor.ok) {
+                    mensagemTela(
+                        'Sistema',
+                        dados.erro || 'Não foi possível obter uma resposta.'
+                    );
+                    return;
+                }
+
+                mensagemTela('Franco', dados.resposta);
+
+                historicoConversa.push({
+                    role: 'assistant',
+                    content: dados.resposta
+                });
+
+            } catch (erro) {
+                mensagemTela(
+                    'Sistema',
+                    'Erro ao conectar com o servidor.'
+                );
+
+                console.error('Erro no chat:', erro);
+
+            } finally {
+                btnEnviar.disabled = false;
+                inputMensagem.focus();
+            }
+        }
+
+        btnEnviar.addEventListener('click', enviarMensagem);
+
+        inputMensagem.addEventListener('keydown', (evento) => {
+            if (evento.key === 'Enter') {
+                evento.preventDefault();
+                enviarMensagem();
+            }
+        });
+    </script>
+
+</body>
+</html>

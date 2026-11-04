@@ -1,0 +1,1828 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --fundo-cinema: #0b0b0d;
+    --fundo-card:#1e1e24;
+    --branco: aliceblue;
+    --cinza:rgb(117, 117, 117);
+    --brilho: rgb(0, 0, 0);
+}
+html{
+  background-color: #111111;
+}
+body {
+    background-color: #000000;
+    color: white;
+    animation: fadeInPage 0.6s ease-out forwards;
+}
+@keyframes fadeInPage{
+  from{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.menu{
+ position: sticky;
+    top: 0;
+    padding: 20px;
+    background-color: rgba(75, 0, 12, 0.9);
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.link {
+    text-decoration: none;
+
+    font-family: "UnifrakturMaguntia", cursive;
+    font-weight: 400;
+    font-size: 1.8rem;
+
+    letter-spacing: 2px;
+    color: white;
+
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.link:hover {
+    color: #ff334f;
+    transform: scale(1.1);
+}
+.vitrine{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 1400px;
+    padding: 40px;
+    gap: 40px;
+    margin: 0 auto;
+    background-color: var(--fundo-cinema);
+}
+.ordem{
+    padding: 40px;
+    border: 3px solid #ffffff;
+    border-radius: 12px;
+    font-family: "Host Grotesk", sans-serif;
+    background-color: var(--fundo-card);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    min-height: 360px;
+    justify-content: space-between;
+    width: 200px;
+    transition: transform 0.5s ease;
+    align-items: center;
+}
+.ordem:hover{
+    transform: translateY(-15px);
+    border-color: var(--brilho);
+    box-shadow: 0 12px 25px whitesmoke;
+}
+.ordem:hover .foto-temp{
+    border-color: var(--brilho);
+    box-shadow: 0 12px 25px rgba(245, 245, 245, 0.229);
+    transition: transform 0.5s ease;
+}
+.foto-temp {
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 3px solid var(--branco);
+}
+.titulo{
+    font-family:  "UnifrakturMaguntia", cursive;
+    text-align: center;
+    letter-spacing: 3px;
+    color:var(--branco);
+    font-size: 1.8rem;
+    margin-top: 10px;
+}
+button{
+   background-color: var(--cinza);
+   padding: 10px;
+   border-radius: 10px;
+   color: aliceblue;
+   border: none;
+}
+button:active{
+    transform: scale(0.90);
+}
+.vitrine2{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 1400px;
+    padding: 40px;
+    gap: 40px;
+    margin: 0 auto;
+    background: #d10000;
+    background: linear-gradient(90deg, rgba(209, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+.ordem2{
+    padding: 40px;
+    border: 3px solid #ffffff;
+    border-radius: 12px;
+    font-family: "Host Grotesk", sans-serif;
+    background: #440000;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    min-height: 360px;
+    justify-content: space-between;
+    width: 200px;
+    transition: transform 0.5s ease;
+    align-items: center;
+}
+.menu2{
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    background-color: rgba(156, 0, 0, 0.75);
+    text-align: center;
+    z-index: 1000;
+    font-family: "Host Grotesk", sans-serif;
+}
+.ordem2:hover{
+    transform: translateY(-15px);
+    border-color: rgb(0, 0, 0);
+    box-shadow: 0 12px 25px rgb(255, 255, 255);
+}
+.ordem2:hover .foto-pg{
+    border-color: var(--brilho);
+    box-shadow: 0 12px 25px rgba(245, 245, 245, 0.229);
+    transition: transform 0.5s ease;
+}
+.foto-pg {
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 3px solid var(--branco);
+}
+.calamida {
+  background-image: linear-gradient(to right, #b94141 0%, #5c0404 51%, #e96262 100%);
+}
+.calamida {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 20px #000000;
+}
+.calamida:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+a{
+    text-decoration: none !important;
+}
+.menu3{
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    background-color: rgba(7, 105, 69, 0.75);
+    text-align: center;
+    z-index: 1000;
+    font-family: "Host Grotesk", sans-serif;
+}
+.vitrine3{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 1400px;
+    padding: 40px;
+    gap: 40px;
+    margin: 0 auto;
+    background: #00d15b;
+    background: linear-gradient(90deg, rgba(0, 209, 91, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+.ordem3{
+    padding: 40px;
+    border: 3px solid #ffffff;
+    border-radius: 12px;
+    font-family: "Host Grotesk", sans-serif;
+    background: #004044;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    min-height: 360px;
+    justify-content: space-between;
+    width: 200px;
+    transition: transform 0.5s ease;
+    align-items: center;
+}
+.ordem3:hover{
+    transform: translateY(-15px);
+    border-color: rgb(0, 0, 0);
+    box-shadow: 0 12px 25px rgb(255, 255, 255);
+}
+.ordem3:hover .foto-osni{
+    border-color: var(--brilho);
+    box-shadow: 0 12px 25px rgba(245, 245, 245, 0.229);
+    transition: transform 0.5s ease;
+}
+.foto-osni {
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 3px solid var(--branco);
+}
+.bosni {
+  background-image: linear-gradient(to right, #62e98f 0%, #044f5c 51%, #62e962 100%);
+}
+.bosni {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 20px #000000;
+}
+.bosni:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+.menu4{
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    background-color: rgba(61, 139, 31, 0.75);
+    text-align: center;
+    z-index: 1000;
+    font-family: "Host Grotesk", sans-serif;
+}
+.vitrine4{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 1400px;
+    padding: 40px;
+    gap: 40px;
+    margin: 0 auto;
+    background: #3bed00;
+    background: linear-gradient(90deg, rgba(59, 237, 0, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+.ordem4{
+    padding: 40px;
+    border: 3px solid #ffffff;
+    border-radius: 12px;
+    font-family: "Host Grotesk", sans-serif;
+    background: #245402;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    min-height: 360px;
+    justify-content: space-between;
+    width: 200px;
+    transition: transform 0.5s ease;
+    align-items: center;
+}
+.ordem4:hover{
+    transform: translateY(-15px);
+    border-color: rgb(0, 0, 0);
+    box-shadow: 0 12px 25px rgb(255, 255, 255);
+}
+.ordem4:hover .foto-sdol{
+    border-color: var(--brilho);
+    box-shadow: 0 12px 25px rgba(245, 245, 245, 0.229);
+    transition: transform 0.5s ease;
+}
+.foto-sdol{
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 3px solid var(--branco);
+}
+.bsdol {
+  background-image: linear-gradient(to right, #00ff0d 0%, #1e6327 51%, #1a9b00 100%);
+}
+.bsdol {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 20px #052900;
+}
+.bsdol:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu5{
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    background-color: rgba(102, 0, 0, 0.75);
+    text-align: center;
+    z-index: 1000;
+    font-family: "Host Grotesk", sans-serif;
+}
+.vitrine5{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 1400px;
+    padding: 40px;
+    gap: 40px;
+    margin: 0 auto;
+    background: #ff0000;
+    background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(92, 0, 0, 1) 100%);
+}
+.ordem5{
+    padding: 40px;
+    border: 3px solid #ffffff;
+    border-radius: 12px;
+    font-family: "Host Grotesk", sans-serif;
+    background: #540202;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    min-height: 360px;
+    justify-content: space-between;
+    width: 200px;
+    transition: transform 0.5s ease;
+    align-items: center;
+}
+.ordem5:hover{
+    transform: translateY(-15px);
+    border-color: rgb(0, 0, 0);
+    box-shadow: 0 12px 25px rgb(255, 255, 255);
+}
+.ordem5:hover .foto-hex{
+    border-color: var(--brilho);
+    box-shadow: 0 12px 25px rgba(245, 245, 245, 0.229);
+    transition: transform 0.5s ease;
+}
+.foto-hex{
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 3px solid var(--branco);
+}
+.bhex {
+  background-image: linear-gradient(to right, #8E0E00 0%, #330f0f 51%, #8E0E00 100%);
+}
+.bhex {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #000000;
+  border-radius: 10px;
+  display: block;
+  outline: none;
+  border: none;
+}
+.bhex:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+.menu6{
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    background-color: rgba(102, 0, 0, 0.75);
+    text-align: center;
+    z-index: 1000;
+    font-family: "Host Grotesk", sans-serif;
+}
+.vitrine6{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 1400px;
+    padding: 40px;
+    gap: 40px;
+    margin: 0 auto;
+    background: #ff0000;
+    background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(92, 0, 0, 1) 100%);
+}
+.ordem6{
+    padding: 40px;
+    border: 3px solid #ffffff;
+    border-radius: 12px;
+    font-family: "Host Grotesk", sans-serif;
+    background: #540202;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    min-height: 360px;
+    justify-content: space-between;
+    width: 200px;
+    transition: transform 0.5s ease;
+    align-items: center;
+}
+.ordem6:hover{
+    transform: translateY(-15px);
+    border-color: rgb(0, 0, 0);
+    box-shadow: 0 12px 25px rgb(255, 255, 255);
+}
+.ordem6:hover .foto-psik{
+    border-color: var(--brilho);
+    box-shadow: 0 12px 25px rgba(245, 245, 245, 0.229);
+    transition: transform 0.5s ease;
+}
+.foto-psik{
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 3px solid var(--branco);
+}
+.bpsik {
+  background-image: linear-gradient(to right, #8E0E00 0%, #330f0f 51%, #8E0E00 100%);
+}
+.bpsik {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #000000;
+  border-radius: 10px;
+  display: block;
+  outline: none;
+  border: none;
+}
+.bpsik:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+.bfranc {
+  background-image: linear-gradient(to right, #f84f00 0%, #960b0b 51%, #dd4103 100%);
+}
+.bfranc {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #000000;
+  border-radius: 10px;
+  display: block;
+  outline: none;
+  border: none;
+}
+.bfranc:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+footer{
+  text-align: center;
+}
+/* ================================
+   CHAT
+================================ */
+
+.container-chat {
+    width: calc(100% - 30px);
+    max-width: 600px;
+    height: 70vh;
+    min-height: 380px;
+    margin: 40px auto;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #1e1e24;
+    border: 3px solid #b90020;
+    border-radius: 15px;
+
+    overflow: hidden;
+     font-family: "Host Grotesk", sans-serif;
+}
+
+/* TÍTULO DE BOAS-VINDAS */
+
+#boasVindas {
+    padding: 15px 20px;
+    margin: 0;
+
+    text-align: center;
+    font-family: "UnifrakturMaguntia", cursive;
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: white;
+   
+    background-color: #0b0b0d;
+    border-bottom: 2px solid #b90020;
+}
+
+/* JANELA DE MENSAGENS */
+
+.janela-mensagens {
+    flex: 1;
+    min-height: 0;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+
+    overflow-y: auto;
+    background-color: #1e1e24;
+
+     font-family: "Host Grotesk", sans-serif;
+   
+}
+
+/* MENSAGENS */
+
+.mensagem {
+    max-width: 80%;
+    padding: 15px;
+
+    border-radius: 15px;
+
+   font-family: "Host Grotesk", sans-serif;
+
+    color: white;
+    background-color: #0b0b0d;
+
+    border: 2px solid #b90020;
+    margin: 0;
+
+    align-self: flex-start;
+    overflow-wrap: anywhere;
+}
+
+/* MENSAGENS DO USUÁRIO */
+
+.mensagem.usuario {
+    background-color: #57000e;
+    border-color: #d10025;
+    align-self: flex-end;
+}
+
+/* FORMULÁRIO DE ENVIO */
+
+.formulario-envio {
+    display: flex;
+    padding: 20px;
+    gap: 10px;
+
+    background-color: #0b0b0d;
+    border-top: 2px solid #b90020;
+
+     font-family: "Host Grotesk", sans-serif;
+}
+
+/* CAMPO DE TEXTO */
+
+.formulario-envio input {
+    flex: 1;
+    min-width: 0;
+
+    padding: 12px;
+
+    border-radius: 8px;
+    border: 2px solid #b90020;
+
+    background-color: #1e1e24;
+    color: white;
+
+     font-family: "Host Grotesk", sans-serif;
+
+    outline: none;
+}
+
+.formulario-envio input::placeholder {
+    color: #aaaaaa;
+}
+
+.formulario-envio input:focus {
+    border-color: #ff334f;
+}
+
+/* BOTÃO ENVIAR */
+
+.formulario-envio button {
+    padding: 0 25px;
+
+    background-color: #b90020;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-family: "UnifrakturMaguntia", cursive;
+    font-weight: 400;
+    font-size: 1.8rem;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.formulario-envio button:hover {
+    background-color: #750014;
+}
+
+.formulario-envio button:active {
+    transform: scale(0.95);
+}
+
+.formulario-envio button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* MENU DO CHAT */
+
+.menu7 {
+    position: sticky;
+    top: 0;
+
+    padding: 20px;
+
+    background-color: rgba(75, 0, 12, 0.9);
+
+    text-align: center;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.menu7 .link {
+    text-decoration: none;
+
+    font-family: "UnifrakturMaguntia", cursive;
+    font-weight: 400;
+    font-size: 1.8rem;
+
+    letter-spacing: 2px;
+    color: white;
+
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu7 .link:hover {
+    color: #ff334f;
+    transform: scale(1.1);
+}
+
+/* RODAPÉ */
+
+footer {
+    text-align: center;
+    padding: 20px;
+
+    color: white;
+    font-family: "Jost", sans-serif;
+    font-size: 0.9rem;
+}
+
+/* ================================
+   RESPONSIVIDADE DO CHAT
+================================ */
+
+@media (max-width: 768px) {
+
+    .container-chat {
+        width: calc(100% - 30px);
+        height: 70vh;
+        min-height: 380px;
+        margin: 25px auto;
+    }
+
+    #boasVindas {
+        padding: 15px 10px;
+        font-size: 1.2rem;
+    }
+
+    .janela-mensagens {
+        padding: 12px;
+    }
+
+    .mensagem {
+        max-width: 95%;
+        overflow-wrap: anywhere;
+    }
+
+    .formulario-envio {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .formulario-envio input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .formulario-envio button {
+        flex-shrink: 0;
+        padding: 0 15px;
+    }
+
+    .menu7 {
+        gap: 12px;
+        padding: 15px 10px;
+    }
+
+    .menu7 .link {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .container-chat {
+        width: calc(100% - 20px);
+        margin: 15px auto;
+        min-height: 350px;
+        height: 65vh;
+    }
+
+    #boasVindas {
+        font-size: 1.05rem;
+    }
+
+    .janela-mensagens {
+        padding: 10px;
+    }
+
+    .mensagem {
+        max-width: 100%;
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    .formulario-envio {
+        padding: 8px;
+        gap: 6px;
+    }
+
+    .formulario-envio input {
+        padding: 10px 8px;
+        font-size: 0.9rem;
+    }
+
+    .formulario-envio button {
+        padding: 0 10px;
+        font-size: 0.9rem;
+    }
+
+    .menu7 {
+        gap: 8px 12px;
+        padding: 12px 8px;
+    }
+
+    .menu7 .link {
+        font-size: 1rem;
+        letter-spacing: 0;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+.francoo {
+ display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  min-height: 85vh;
+  padding: 60px 40px ;
+  text-align: center;
+  box-sizing: border-box;
+  background: #d41c1c;
+  background: linear-gradient(90deg,rgba(212, 28, 28, 1) 0%, rgb(199, 133, 26) 50%, rgb(224, 40, 40) 100%);
+ }
+.esquerdo{
+   width: 35%;
+   text-align: center;
+   height: 400px;
+   padding: 20px;
+   font-family: "Host Grotesk", sans-serif;
+}
+.franc-titulo {
+  font-family: "UnifrakturMaguntia", cursive;
+  font-size: 5rem;
+  color: orange;
+  margin: 0;
+  letter-spacing: 10px;
+  text-shadow: 4px 4px 0px rgba(255, 255, 255, 0.514);
+  animation: jello 1.6s infinite;
+}
+@keyframes jello{
+    0% { transform: scale(1, 1); }
+    25% { transform: scale(1.1, 0.9); }
+    50% { transform: scale(0.9, 1.1); }
+    75% { transform: scale(1.05, 0.95); }
+    100% { transform: scale(1, 1); }
+}
+.franc-subtitulo {
+  color: white;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 15px 0 30px 0;
+  font-family: "Host Grotesk", sans-serif;
+}
+.franco-front {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 90%;
+  max-height: 700px;
+  z-index: 1;
+  filter: drop-shadow(0px 20px 10px rgba(255, 255, 255, 0.521));
+  font-family: "Host Grotesk", sans-serif;
+}
+.direito{
+  display: flex;
+  flex-direction: column;
+   width: 35%;
+   text-align: center;
+   height: 400px;
+   padding: 10px;
+   gap: 100px;
+   align-items: center;
+   margin-top: 0;
+   font-family: "Host Grotesk", sans-serif;
+}
+.bloco-balao {
+  display:flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 30px;
+  background: rgb(223, 149, 13);
+  color: white;
+  padding: 18px 28px;
+  border-radius: 60px;
+  font-weight: bold;
+  width: 350px;
+  font-size: 1.15rem;
+  border: 4px solid white;
+  box-shadow: 6px 6px 10px rgb(255, 255, 255);
+  transform: rotate(-4deg);
+  transition: all 0.3s ease;
+  font-family: "Host Grotesk", sans-serif;
+}
+.btn-principal {
+  background: rgb(228, 154, 18);
+  color: #ffffff;
+  font-family: "UnifrakturMaguntia", cursive;
+  font-size: 1.4rem;
+  padding: 12px 35px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgb(255, 255, 255);
+  transition: transform 0.2s ease, 0.2s ease;
+  width: 250px;
+}
+.secao-perfil {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 60px;
+  align-items: center;
+  background: rgb(202, 111, 6);
+  padding: 40px;
+  border-radius: 24px;
+  font-family: "Host Grotesk", sans-serif;
+}
+.perfil-moldura {
+  overflow: hidden;
+  border-radius: 16px;
+  border: 4px solid white;
+  box-shadow: 0 0 30px rgb(255, 255, 255);
+  cursor: pointer;
+  position: relative;
+ transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.perfil-foto {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.perfil-moldura:hover .perfil-foto {
+  transform: scale(1.08) rotate(3deg);
+  filter: brightness(1.15) contrast(1.05);
+}
+.perfil-moldura:hover {
+  border-color: white;
+  box-shadow: 0 0 40px rgba(244, 179, 26, 0.932);
+}
+.perfil-texto h2 {
+  font-family: "UnifrakturMaguntia", cursive;
+  font-size: 2.8rem;
+  color: rgb(230, 191, 154);
+  margin-top: 0;
+  letter-spacing: 2px;
+}
+.perfil-texto p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: white;
+}
+.btn-principal:hover {
+  transform: translateY(-4px);
+  background-color: rgb(155, 32, 1);
+}
+.btn-principal:active {
+  transform: translateY(1px) scale(0.95);
+}
+.cadastro {
+    font-family: "UnifrakturMaguntia", cursive;
+    font-style: normal;
+    font-size: 20px;
+    color: rgb(229, 149, 0);
+    letter-spacing: 5px;
+    text-align: center;
+}
+.box-cadastro {
+    width: 700px;
+    margin: 48px auto;
+    padding: 15px;
+    border: 4px solid rgb(224, 157, 0);
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(224, 223, 216, 0.666);
+    box-sizing: border-box;
+}
+.cadastro h1 {
+    font-weight: 400;
+    padding: 20px;
+    text-align: center;
+}
+.cadastro input {
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    border: 2px solid #19072e;
+    border-radius: 30px;
+    width: 500px;
+    padding: 13px;
+    margin: 1px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.cadastro button {
+    background-color: #f7be56;
+    font-family: "Host Grotesk", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: rgb(173, 107, 7);
+    border: 2px solid #fefefe;
+    border-radius: 30px;
+    width: 400px;
+    padding: 15px;
+    margin: 10px auto 25px auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.cadastro button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--brilho);
+    background-color: #fbbb27;
+}
+.cadastro #resposta {
+    text-align: center;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+.login-page {
+    font-family: "UnifrakturMaguntia", cursive;
+    font-style: normal;
+    font-size: 20px;
+    color: rgb(229, 149, 0);
+    letter-spacing: 5px;
+    text-align: center;
+}
+.box-login {
+    width: 700px;
+    margin: 48px auto;
+    padding: 15px;
+    border: 4px solid rgb(224, 157, 0);
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(224, 223, 216, 0.666);
+    box-sizing: border-box;
+}
+.box-login h1 {
+    font-weight: 400;
+    padding: 20px;
+    text-align: center;
+}
+.box-login input {
+    font-family:"host Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    border: 2px solid #2e2407;
+    border-radius: 30px;
+    width: 500px;
+    padding: 13px;
+    margin: 1px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.box-login button {
+    background-color: #f7be56;
+    font-family: "Host Grotesk", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: rgb(173, 107, 7);
+    border: 2px solid #fefefe;
+    border-radius: 30px;
+    width: 400px;
+    padding: 15px;
+    margin: 10px auto 25px auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.box-login button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--brilho);
+    background-color: #fbbb27;
+}
+.box-login #loginMensagem {
+    text-align: center;
+    font-family: "Host Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    font-family: "Host Grotesk", sans-serif;
+    color: #ffa228;
+    font-size: 14px;
+    margin-top: 50px;
+}
+
+/* RESPONSIVIDADE DO PROJETO PAIMON */
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+body {
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* TABLETS */
+@media (max-width: 768px) {
+    .menu {
+        position: relative;
+        width: 100%;
+        padding: 15px 10px;
+        gap: 12px 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .link-menu {
+        font-size: clamp(1rem, 3vw, 1.3rem);
+        letter-spacing: 1px;
+    }
+    .hero-deadpool {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: auto;
+        padding: 30px 18px;
+        gap: 20px;
+        text-align: center;
+    }
+    .esquerdo,
+    .direito {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        flex: none;
+    }
+    .hero-titulo {
+        font-size: clamp(2.3rem, 8vw, 4rem);
+        letter-spacing: 2px;
+        overflow-wrap: anywhere;
+    }
+    .hero-subtitulo {
+        font-size: 1rem;
+    }
+    .deadpool-front {
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        max-height: 380px;
+        margin: 0 auto;
+        object-fit: contain;
+    }
+    .bloco-balao {
+        width: 100%;
+        padding: 18px;
+    }
+    .btn-principal {
+        max-width: 100%;
+        padding: 13px 20px;
+        font-size: 1rem;
+    }
+    .container-principal {
+        width: 100%;
+        max-width: 100%;
+        margin: 25px auto;
+        padding: 0 15px;
+    }
+    .secao-perfil {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    .perfil-moldura,
+    .perfil-texto {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+    .perfil-foto {
+        display: block;
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        margin: 0 auto;
+        object-fit: cover;
+    }
+    .perfil-texto h2 {
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
+        overflow-wrap: anywhere;
+    }
+    .perfil-texto p {
+        font-size: 1rem;
+        overflow-wrap: anywhere;
+    }
+    .chatContainer {
+        width: calc(100% - 30px);
+        max-width: 600px;
+        height: 70vh;
+        min-height: 380px;
+        margin: 20px auto;
+    }
+    #boasVindas {
+        padding: 14px 10px;
+        font-size: 1.1rem;
+        overflow-wrap: anywhere;
+    }
+    #caixaChat {
+        min-width: 0;
+        padding: 12px;
+    }
+    .msg {
+        max-width: 90%;
+        padding: 12px;
+        font-size: 0.95rem;
+        overflow-wrap: anywhere;
+    }
+    #inputArea {
+        width: 100%;
+        padding: 12px;
+        gap: 8px;
+    }
+    #inputArea input {
+        flex: 1;
+        width: 0;
+        min-width: 0;
+        font-size: 16px;
+    }
+    #inputArea button {
+        flex-shrink: 0;
+        min-height: 42px;
+        padding: 0 15px;
+    }
+    .box-cadastro,
+    .box-login {
+        width: calc(100% - 30px);
+        max-width: 500px;
+        margin: 30px auto;
+        padding: 20px 15px;
+    }
+    .cadastro,
+    .login-page {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+    .cadastro h1,
+    .box-login h1 {
+        padding: 15px 5px;
+        font-size: 1.9rem;
+    }
+    .cadastro input,
+    .box-login input {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 8px auto;
+        padding: 13px 10px;
+        font-size: 16px;
+        letter-spacing: normal;
+    }
+    .cadastro button,
+    .box-login button {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 15px auto;
+        padding: 13px 8px;
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+    .cadastro #resposta,
+    .box-login #loginMensagem {
+        overflow-wrap: anywhere;
+    }
+    footer {
+        padding: 18px 12px;
+        font-size: 0.85rem;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 480px) {
+    .menu {
+        padding: 12px 8px;
+        gap: 10px 12px;
+    }
+    .link-menu {
+        font-size: 0.95rem;
+        letter-spacing: 0;
+    }
+    .hero-deadpool {
+        padding: 22px 12px;
+        gap: 15px;
+    }
+    .hero-titulo {
+        font-size: clamp(2rem, 10vw, 2.7rem);
+        letter-spacing: 1px;
+    }
+    .hero-subtitulo {
+        font-size: 0.95rem;
+    }
+    .deadpool-front {
+        max-width: 250px;
+        max-height: 300px;
+    }
+    .bloco-balao {
+        padding: 14px;
+    }
+    .secao-perfil {
+        padding: 14px;
+        gap: 15px;
+    }
+    .perfil-foto {
+        max-width: 210px;
+    }
+    .perfil-texto h2 {
+        font-size: 1.7rem;
+    }
+    .perfil-texto p {
+        font-size: 0.95rem;
+    }
+    .chatContainer {
+        width: calc(100% - 16px);
+        height: 68vh;
+        min-height: 340px;
+        margin: 12px auto;
+        border-width: 2px;
+        border-radius: 12px;
+    }
+    #boasVindas {
+        padding: 12px 8px;
+        font-size: 1rem;
+    }
+    #caixaChat {
+        padding: 9px;
+        gap: 8px;
+    }
+    .msg {
+        max-width: 95%;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    #inputArea {
+        padding: 8px;
+        gap: 6px;
+    }
+    #inputArea input {
+        padding: 10px 8px;
+        font-size: 16px;
+    }
+    #inputArea button {
+        padding: 0 10px;
+        font-size: 0.85rem;
+    }
+    .box-cadastro,
+    .box-login {
+        width: calc(100% - 16px);
+        margin: 18px auto;
+        padding: 16px 11px;
+        border-radius: 20px;
+    }
+    .cadastro,
+    .login-page {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+    .cadastro h1,
+    .box-login h1 {
+        padding: 12px 4px;
+        font-size: 1.6rem;
+    }
+    .cadastro input,
+    .box-login input {
+        padding: 12px 10px;
+    }
+    .cadastro button,
+    .box-login button {
+        padding: 12px 8px;
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+    footer {
+        padding: 15px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+/* CELULARES MUITO PEQUENOS */
+@media (max-width: 360px) {
+    .menu {
+        gap: 8px;
+        padding: 10px 5px;
+    }
+    .link-menu {
+        font-size: 0.82rem;
+    }
+    .hero-titulo {
+        font-size: 2rem;
+    }
+    .chatContainer {
+        width: calc(100% - 12px);
+    }
+    #inputArea {
+        gap: 5px;
+    }
+    #inputArea button {
+        padding: 0 8px;
+        font-size: 0.8rem;
+    }
+}
+
+.menu,
+.menu2,
+.menu3,
+.menu4,
+.menu5,
+.menu6,
+.menu7 {
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    background-color: rgba(75, 0, 12, 0.9);
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.menu .link,
+.menu2 .link,
+.menu3 .link,
+.menu4 .link,
+.menu5 .link,
+.menu6 .link,
+.menu7 .link,
+.menu > a,
+.menu2 > a,
+.menu3 > a,
+.menu4 > a,
+.menu5 > a,
+.menu6 > a,
+.menu7 > a {
+    text-decoration: none;
+    font-family: "UnifrakturMaguntia", cursive;
+    font-weight: 400;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu a:hover,
+.menu2 a:hover,
+.menu3 a:hover,
+.menu4 a:hover,
+.menu5 a:hover,
+.menu6 a:hover,
+.menu7 a:hover {
+    color: #ff334f;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .menu,
+    .menu2,
+    .menu3,
+    .menu4,
+    .menu5,
+    .menu6,
+    .menu7 {
+        gap: 12px 18px;
+        padding: 15px 10px;
+    }
+
+    .menu a,
+    .menu2 a,
+    .menu3 a,
+    .menu4 a,
+    .menu5 a,
+    .menu6 a,
+    .menu7 a {
+        font-size: 1.2rem;
+    }
+}
+
+/* RESPONSIVIDADE DE TODOS OS MENUS */
+
+@media (max-width: 768px) {
+    .menu,
+    .menu2,
+    .menu3,
+    .menu4,
+    .menu5,
+    .menu6,
+    .menu7 {
+        position: sticky;
+        top: 0;
+        padding: 15px 10px;
+        gap: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu .link,
+    .menu2 .link,
+    .menu3 .link,
+    .menu4 .link,
+    .menu5 .link,
+    .menu6 .link,
+    .menu7 .link,
+    .menu .link-menu,
+    .menu2 .link-menu,
+    .menu3 .link-menu,
+    .menu4 .link-menu,
+    .menu5 .link-menu,
+    .menu6 .link-menu,
+    .menu7 .link-menu {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+}
+
+/* CELULARES PEQUENOS */
+
+@media (max-width: 480px) {
+    .menu,
+    .menu2,
+    .menu3,
+    .menu4,
+    .menu5,
+    .menu6,
+    .menu7 {
+        gap: 8px 12px;
+        padding: 12px 8px;
+    }
+
+    .menu .link,
+    .menu2 .link,
+    .menu3 .link,
+    .menu4 .link,
+    .menu5 .link,
+    .menu6 .link,
+    .menu7 .link,
+    .menu .link-menu,
+    .menu2 .link-menu,
+    .menu3 .link-menu,
+    .menu4 .link-menu,
+    .menu5 .link-menu,
+    .menu6 .link-menu,
+    .menu7 .link-menu {
+        font-size: 1rem;
+        letter-spacing: 0;
+    }
+}
+
+/* ============================= */
+/* RESPONSIVIDADE DO INDEX */
+/* ============================= */
+
+/* TABLETS E TELAS MENORES */
+@media (max-width: 900px) {
+
+    .francoo {
+        min-height: auto;
+        height: auto;
+        padding: 50px 30px;
+        gap: 25px;
+    }
+
+    .esquerdo {
+        width: 35%;
+        height: auto;
+    }
+
+    .franc-titulo {
+        font-size: clamp(3rem, 6vw, 4.5rem);
+    }
+
+    .franc-subtitulo {
+        font-size: 1rem;
+    }
+
+    .direito {
+        width: 35%;
+        height: auto;
+        gap: 40px;
+    }
+
+    .bloco-balao {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .btn-principal {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+
+    .franco-front {
+        max-height: 550px;
+        max-width: 40%;
+        object-fit: contain;
+    }
+
+    .secao-perfil {
+        gap: 35px;
+        padding: 30px;
+    }
+
+    .perfil-moldura {
+        width: 100%;
+    }
+
+    .perfil-foto {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+/* CELULARES */
+@media (max-width: 768px) {
+
+    .francoo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .esquerdo {
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+
+    .franc-titulo {
+        font-size: clamp(3rem, 12vw, 5rem);
+    }
+
+    .franc-subtitulo {
+        font-size: 1rem;
+        max-width: 450px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    .franco-front {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        transform: none;
+        display: block;
+        width: 75%;
+        max-width: 350px;
+        max-height: 400px;
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+    .direito {
+        width: 100%;
+        height: auto;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .bloco-balao {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .btn-principal {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .container-principal {
+        width: 100%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .secao-perfil {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 25px 20px;
+    }
+
+    .perfil-moldura {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .perfil-foto {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .perfil-texto {
+        width: 100%;
+        text-align: center;
+    }
+
+    .perfil-texto h2 {
+        font-size: 1.8rem;
+    }
+
+    .perfil-texto p {
+        font-size: 1rem;
+        line-height: 1.7;
+        text-align: justify;
+    }
+}
+
+
+/* CELULARES PEQUENOS */
+@media (max-width: 480px) {
+
+    .francoo {
+        padding: 30px 15px;
+        gap: 18px;
+    }
+
+    .franc-titulo {
+        font-size: 3rem;
+    }
+
+    .franc-subtitulo {
+        font-size: 0.9rem;
+    }
+
+    .franco-front {
+        width: 85%;
+        max-width: 300px;
+        max-height: 350px;
+    }
+
+    .bloco-balao {
+        max-width: 300px;
+        font-size: 0.9rem;
+    }
+
+    .btn-principal {
+        max-width: 230px;
+        font-size: 0.9rem;
+    }
+
+    .container-principal {
+        padding: 10px;
+    }
+
+    .secao-perfil {
+        padding: 20px 15px;
+        gap: 20px;
+    }
+
+    .perfil-texto h2 {
+        font-size: 1.5rem;
+    }
+
+    .perfil-texto p {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* CELULARES MUITO PEQUENOS */
+@media (max-width: 360px) {
+
+    .franc-titulo {
+        font-size: 2.5rem;
+    }
+
+    .franco-front {
+        width: 90%;
+    }
+
+    .franc-subtitulo {
+        font-size: 0.85rem;
+    }
+
+    .bloco-balao {
+        font-size: 0.85rem;
+    }
+
+    .perfil-texto h2 {
+        font-size: 1.3rem;
+    }
+}
+   
+
+@import url('https\://fonts.googleapis.com/css2?family=Notable&display=swap');
+@import url('https\://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="server" href="server.js">
+</head>
+
+<body class="login-page">
+
+    <nav class="menu">
+        <a href="index.html" class="link-menu">Home</a>
+        <a href="galeria.html" class="link-menu">galeria</a>
+        <a href="chat.html" class="link-menu" id="linkChat">Chat</a>
+        <a href="cadastro.html" class="link-menu">cadastro</a>
+        <a href="login.html" class="link-menu">login</a>
+    </nav>
+
+    <script>
+    const linkChat = document.querySelector('#linkChat');
+
+    linkChat.addEventListener('click', function(event) {
+        const usuarioLogado = localStorage.getItem('usuarioLogado');
+
+        if (!usuarioLogado) {
+            event.preventDefault();
+            window.location.href = 'cadastro.html';
+        }
+    });
+</script>
+
+    <div class="box-login">
+
+        <h1>Login</h1>
+
+        <label for="loginEmail">E-mail</label><br>
+        <input type="email" id="loginEmail" placeholder="Digite seu e-mail"><br><br>
+
+        <label for="loginSenha">Senha</label><br>
+        <input type="password" id="loginSenha" placeholder="Digite sua senha"><br><br>
+
+        <button onclick="logarUsuario()">Enviar</button>
+
+        <div id="loginMensagem"></div>
+
+    </div>
+
+   
+    <script>
+        async function logarUsuario() {
+            const emailEntrada = document.querySelector('#loginEmail');
+            const senhaEntrada = document.querySelector('#loginSenha');
+            const loginMensagem = document.querySelector('#loginMensagem');
+
+            const emailDigitado = emailEntrada.value;
+            const senhaDigitada = senhaEntrada.value;
+
+            if (!emailDigitado || !senhaDigitada) {
+                loginMensagem.innerText = 'Preencha todos os campos antes de enviar!';
+                loginMensagem.style.color = 'red';
+                return;
+            }
+
+            loginMensagem.innerText = 'Dados enviados, aguarde...';
+            loginMensagem.style.color = 'orange';
+
+            try {
+               
+                const respostaBe = await fetch('https://praga.onrender.com/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: emailDigitado,
+                        senha: senhaDigitada
+                    })
+                });
+
+                const dados = await respostaBe.json();
+
+                if (!respostaBe.ok) {
+                    loginMensagem.innerText = dados.erro;
+                    loginMensagem.style.color = 'red';
+                    return;
+                }
+
+                
+                loginMensagem.innerText = `${dados.mensagem} Conta: ${dados.usuario}`;
+                loginMensagem.style.color = 'green';
+                localStorage.setItem('usuarioLogado', dados.usuario);
+
+                emailEntrada.value = '';
+                senhaEntrada.value = '';
+
+                setTimeout(() => {
+     window.location.href = 'chat.html';
+    }, 800);
+
+            } catch (erro) {
+                console.error('Erro na requisição:', erro);
+                loginMensagem.innerText = 'Erro ao conectar com o servidor!!';
+                loginMensagem.style.color = 'red';
+            }
+        }
+    </script>
+
+<footer>
+        &copy; Desenvolvido por Arthur S. - 2026 Curitiba
+    </footer>
+<!--Inicio Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+
+    <!--Fim Google Fonts-->
+</body>
+</html>
+
+ 
